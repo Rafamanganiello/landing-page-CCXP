@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCXP 2022</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="header.svg" alt="">
+    </header>
+    <div class="conteiner">
+        <div id="content">
+            <h1>REVIVA O ÉPICO </h1>
+            <p>DE 01 A 04 DE DEZEMBRO</p>
+            <h3>Você consegue sentir? É aquela sensação de <br>
+                finalmente poder falar em voz alta: "estamos<br>
+                em casa". Sim, em dezembro de 2022, <br>
+                teremos a volta da CCXP física. Mas não será<br> 
+                qualquer CCXP, vai ser a maior de todos os<br> 
+                tempos. Prepare-se para visitar seus<br> 
+                universos favoritos, explorar o Artists' Valley,<br> 
+                se emocionar nos auditórios e encontrar<br> aventuras épicas a cada passo pelos nossos corredores.</h3>
+        </div>
+        <div id="counter">
+            <div class="timer">
+                <div class="marcador">
+                    <h1 id="dia">00</h1>                    
+                </div>
+                <div class="marcador">
+                    <h1 id="hora">00</h1>                   
+                </div>
+                <div class="marcador">
+                    <h1 id="minuto">00</h1>                    
+                </div>
+                <div class="marcador">
+                    <h1 id="segundo">00</h1>                    
+                </div>
+            </div>
+            <h2>PARA O MAIOR EVENTO DE TODOS</h2>
+            <div id="video">
+                <video width="850px" controls loop><source src="Arlequina.mp4" type="video/mp4"></video>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <h1>AINDA DÁ TEMPO DE GARANTIR O SEU, MAS CORRE!</h1>
+        <div class="conteiner">
+            <div id="tags">
+                <img src="quint.svg" alt="">
+                <img src="sexta.svg" alt="">
+                <img src="sabado.svg" alt="">
+                <img src="domingo.svg" alt="">
+            </div>
+            <div id="botao">
+            <button>GARANTA JÁ O SEU!</button>
+            </div>
+        </div>    
+    </div>
+    <script>
+        const dia = window.document.getElementById('dia')
+        const hora = window.document.getElementById('hora')
+        const minuto = window.document.getElementById('minuto')
+        const segundo = window.document.getElementById('segundo')
+
+        const lancamento = "03 dec 2024"
+
+        function Countdown(){
+            const dataLance = new Date(lancamento)
+            const hoje = new Date()
+
+            const segundoTotal = (dataLance - hoje)/1000;
+
+            const finalDias = Math.floor(segundoTotal / 60 / 60 / 24);
+            const finalHoras = Math.floor(segundoTotal / 60 / 60) % 24;
+            const finalMinutos = Math.floor(segundoTotal / 60) % 60;
+            const finalSegundos = Math.floor(segundoTotal) % 60;
+
+            dia.innerHTML = FormatoTempo (finalDias)
+            hora.innerHTML = FormatoTempo (finalHoras)
+            minuto.innerHTML = FormatoTempo (finalMinutos)
+            segundo.innerHTML = FormatoTempo (finalSegundos)
+        }
+        function FormatoTempo( tempo ){
+            return tempo < 10? `0${tempo}` : tempo;
+            
+        }       
+
+        Countdown();
+        setInterval(Countdown, 1000)
+    </script>
+</body>
+</html>

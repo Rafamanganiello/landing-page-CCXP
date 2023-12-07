@@ -1,0 +1,111 @@
+body{
+    margin: 0%;
+}
+header{
+    background-color: rgba(255, 217, 0, 1);
+    height: 118px;
+    width: 1728px;
+}
+header img{
+    margin-top: 25px;
+    margin-left: 45px;
+    width: 202px;
+}
+
+.conteiner{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+}
+#content{
+    background-color: rgba(81, 73, 136, 1);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    width: 802px;
+    height: 694px;
+}
+#content h1{
+    font-size: 70px;
+    color: rgba(243, 198, 31, 1);
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+#content p{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#content h3{
+    font-size: 25px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 200;
+}
+#counter{
+    text-align: center;
+}
+#counter h1{
+    font-size: 70px;
+    color: rgba(81, 73, 136, 1);
+    font-weight: 700;
+}
+.timer{
+    display: grid;
+    grid-auto-flow: column;   
+}
+
+#counter h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(227, 56, 129, 1);
+    font-size:30px;
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px;
+}
+.marcador h1{
+    padding: 0px;;
+    margin-top: 28%;
+    margin-bottom: 0px;    
+}
+#video{
+    margin-left: 35px;
+    margin-top: 20px;
+}
+#footer{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+#footer h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(243, 198, 31, 1);
+    font-size: 27px;
+    font-weight: 700;
+}
+button{
+    width: 596px;
+    height: 148px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 42px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(81, 73, 136, 1);
+    border: 0px;
+    border-radius: 10px;
+}
+#tags{
+    display: grid;
+    grid-auto-flow: column;
+    padding-right: 100px;
+    
+}
+#botao{
+    display: flex;
+    justify-content: center;
+}
+#botao button{
+    cursor: pointer;
+}
+#botao button:hover{
+    color: #303030;
+}
