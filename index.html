@@ -48,13 +48,13 @@
         <h1>AINDA DÁ TEMPO DE GARANTIR O SEU, MAS CORRE!</h1>
         <div class="conteiner">
             <div id="tags">
-                <img src="quint.svg" alt="">
-                <img src="sexta.svg" alt="">
-                <img src="sabado.svg" alt="">
-                <img src="domingo.svg" alt="">
+                <img src="quint.svg" onmouseover="highlightCard ('#quinta')" onmouseout="highlightCard ('#quinta')" onclick="selectCard('#quinta')" id="quinta" alt="">
+                <img src="sexta.svg" onmouseover="highlightCard ('#sexta')" onmouseout="highlightCard ('#sexta')" onclick="selectCard('#sexta')" id="sexta" alt="">
+                <img src="sabado.svg" onmouseover="highlightCard ('#sabado')" onmouseout="highlightCard ('#sabado')" onclick="selectCard('#sabado')" id="sabado" alt="">
+                <img src="domingo.svg" onmouseover="highlightCard ('#domingo')" onmouseout="highlightCard ('#domingo')" onclick="selectCard('#domingo')" id="domingo" alt="">
             </div>
             <div id="botao">
-            <button>GARANTA JÁ O SEU!</button>
+            <button onclick="showSelectedCards()">GARANTA JÁ O SEU!</button>
             </div>
         </div>    
     </div>
@@ -89,6 +89,61 @@
 
         Countdown();
         setInterval(Countdown, 1000)
+
+        function highlightCard(selector){
+        var element = document.querySelector(selector);
+        element.classList.toggle("card-highlight");
+    }   
+    function addKeyboardEventListeners()
+    {
+        document.addEventListener('keydown', (event) => {
+            var ingresso1 = document.getElementById("quinta");
+            var ingresso2 = document.getElementById("sexta");
+            var ingresso3 = document.getElementById("sabado");
+            var ingresso4 = document.getElementById("domingo");
+            
+            var code = event.code;
+            if (code == 'Digit1'){
+                ingresso1.classList.toggle("card-highlight");
+                ingresso2.classList.remove("card-highlight");
+                ingresso3.classList.remove("card-highlight");
+                ingresso4.classList.remove("card-highlight");
+            }
+            if(code == 'Digit2'){
+                ingresso1.classList.remove("card-highlight");
+                ingresso2.classList.toggle("card-highlight");
+                ingresso3.classList.remove("card-highlight");
+                ingresso4.classList.remove("card-highlight");
+            }
+            if(code == 'Digit3'){
+                ingresso1.classList.remove("card-highlight");
+                ingresso2.classList.remove("card-highlight");
+                ingresso3.classList.toggle("card-highlight");
+                ingresso4.classList.remove("card-highlight");
+            }
+            if(code == 'Digit4'){
+                ingresso1.classList.remove("card-highlight");
+                ingresso2.classList.remove("card-highlight");
+                ingresso3.classList.remove("card-highlight");
+                ingresso4.classList.toggle("card-highlight");
+            }
+        }, false); 
+    }
+    const ingressos = [];
+
+    function selectCard (selector){
+        var element = document.querySelector(selector);
+        element.classList.toggle("card-selected");
+        if (ingressos.includes(selector)) ingressos.pop(selector);
+        else ingressos.push(selector);
+    }
+
+    function showSelectedCards()
+    {
+        if(ingressos.length > 0) alert("Ingressos Selecionados:" + ingressos);
+    }
+
+    addKeyboardEventListeners();
     </script>
 </body>
 </html>
